@@ -1,0 +1,20 @@
+@startuml
+
+interface GBList extends GBIterable {
+    + {abstract} add(String val): void
+    + {abstract} remove(String val): boolean
+    + {abstract} get(int index): String
+    + {abstract} size(): int
+}
+
+interface GBIterable {
+    + {abstract} iterator(): GBIterator
+}
+
+interface GBIterator {
+    + {abstract} hasNext(): boolean
+    + {abstract} next(): String
+}
+
+
+@enduml

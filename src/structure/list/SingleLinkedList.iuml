@@ -1,0 +1,19 @@
+@startuml
+
+!include GBList.iuml
+
+class SingleLinkedList implements GBList {
+    - first: Node
+}
+
+class Node {
+    - val: String
+    - next: Node
+    --Constructors--
+    --Getters and Setter--
+}
+
+class StraightForwardIterator implements GBIterator {
+}
+
+@enduml
