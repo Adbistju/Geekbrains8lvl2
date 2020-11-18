@@ -1,6 +1,6 @@
-package structure.list;
+package structure.list.doubly;
 
-public interface GBList extends GBIterable {
+public interface GBDoublyList extends GBDoublyIterable {
     void add(String val);
     boolean remove(String val);
     int size();
