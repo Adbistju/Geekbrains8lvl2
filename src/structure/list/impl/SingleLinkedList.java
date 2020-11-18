@@ -25,6 +25,20 @@ public class SingleLinkedList implements GBList {
         add(current.next, val);
     }
 
+    public String get(int index){
+        int currentIndex=0;
+        Node prev = first;
+        Node current = first.next;
+        while(index!=currentIndex){
+            currentIndex++;
+            prev = current;
+            current = current.next;
+        }
+        if(index<currentIndex){
+            return null;
+        }
+        return prev.val;
+    }
 
     @Override
     public boolean remove(String val) {

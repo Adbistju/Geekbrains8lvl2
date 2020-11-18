@@ -1,33 +1,54 @@
 package structure.list;
 
 import structure.list.impl.SingleLinkedList;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import structure.list.doubly.*;
 
 public class Main {
+
+    static GBList list = new SingleLinkedList();
+
+    static GBDoublyList doublyList = new DoublyLinkedList();
+
     public static void main(String[] args) {
-        GBList list = new SingleLinkedList();
         list.add("BMW");
         list.add("TOYOTA");
         list.add("GAZ");
         list.add("TOYOTA");
 
-        GBIterator iterator = list.iterator();
-        while (iterator.hasNext()) {
-            String next = iterator.next();
-            System.out.println(next);
-        }
-        System.out.println("Size before remove " + list.size());
-
-        boolean isToyotaRemoved = list.remove("TOYOTA");
-        System.out.println("Is toyota removed? " + isToyotaRemoved);
-        System.out.println("Size after remove " + list.size());
-
         System.out.println(list);
 
+        System.out.println(list.get(2));
 
+        /**
+            *GBDoubleList
+         */
+        addDoubleList();
+        printDoubleList();
+        removeDoubleList();
+        printDoubleList();
+        System.out.println(doublyList);
+    }
+    public static void addDoubleList(){
+        doublyList.add("ODIN");
+        doublyList.add("DVA");
+        doublyList.add("TRE");
+        doublyList.add("CHETIRE");
+        doublyList.add("PYATJ");
+        doublyList.add("HECH");
+        System.out.println(doublyList);
+    }
+    public static void removeDoubleList(){
+        doublyList.remove("DVA");
+        doublyList.remove("TRE");
+        doublyList.remove("CHETIRE");
+        doublyList.remove("PYATJ");
 
+    }
+    public static void printDoubleList(){
+        for (int i = 0; i < doublyList.size(); i++) {
+            System.out.println("___________________________");
+            System.out.println(doublyList.get(i));
+            System.out.println("___________________________");
+        }
     }
 }
